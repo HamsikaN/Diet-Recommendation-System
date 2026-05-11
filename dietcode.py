@@ -21,10 +21,10 @@ diet_data['Diet Recommendation'] = diet_encoder.fit_transform(diet_data['Diet Re
 X = diet_data[['Age', 'Gender', 'Height (cm)', 'Weight (kg)', 'Goal']]
 y = diet_data['Diet Recommendation']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.8, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 
-model = RandomForestClassifier(n_estimators=8, max_depth=2, random_state=42)
+model = RandomForestClassifier(n_estimators=100, max_depth=None, random_state=42)
 model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
